@@ -27,7 +27,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::resource('stage', StageCollegeControllerController::class)->names('admin.stage');
     Route::resource('lecture', LectureController::class)->names('admin.lecture');
 
-    Route::get('/', [HomeController::class, 'index']);
+    Route::resource('/home', HomeController::class);
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 });
 

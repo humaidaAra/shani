@@ -2,26 +2,21 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Department extends Model
+class Professor extends Model
 {
     use HasFactory,SoftDeletes;
+
     protected $fillable = [
         'name',
-        'college_id'
+        'phone'
     ];
-
-    public function college()
-    {
-        return $this->belongsTo(College::class);
-    }
 
     public function subjects()
     {
-        return $this->belongsToMany(Subject::class, 'department_subject');
+        return $this->hasMany(Subject::class);
     }
 }

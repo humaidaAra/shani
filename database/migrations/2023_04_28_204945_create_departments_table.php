@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('college_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

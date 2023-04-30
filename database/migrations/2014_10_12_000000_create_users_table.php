@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->tinyInteger("role")->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -30,7 +31,7 @@ return new class extends Migration
             'username' => 'shani',
             'email' => null,
             'email_verified_at' => null,
-            'password' => '$2y$10$3rpOwaCNaocBwEY6.wvIB.Tj6v353tSBOe0Ha0L01.v9NDFzhibtu',
+            'password' => '$2y$10$yn2kBSm3W/yAGMSLmy8x3eTBe5yEL7w2wrrjVNp.Xo2.T8snQgafC',
         ]);
     }
 
